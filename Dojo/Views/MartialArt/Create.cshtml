@@ -6,11 +6,9 @@
 
 @using (Html.BeginForm())
 {
-  @Html.Label("Martial Art Type: ")
-  @Html.TextBoxFor(model => model.Type)
+  @Html.Label("Martial Art Type")<span>  :  </span>
+  @Html.TextBoxFor(model => model.Type, new {required = "required", @class="textBox" })
   <input type="submit" value="Add new Martial Art" class="htmlButton"/>
 }
-<br>
-<br>
-
+<hr/>
 @Html.ActionLink("Show all Martial Arts", "Index", "MartialArt", null, new { @class="htmlButton"})

@@ -8,6 +8,7 @@
 @Html.DisplayNameFor(model => model.Type): @Html.DisplayFor(model => model.Type)
   @using (Html.BeginForm())
   {
-    <input type="submit" value="Delete" />
+    <input type="submit" value="Delete" class="htmlButton"/>
   }
-  @Html.ActionLink("Back to Clients", "Index")
+<hr/>
+@Html.ActionLink("Back to List", "Index", "MartialArt", null, new { @class="htmlButton" })

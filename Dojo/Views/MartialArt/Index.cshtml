@@ -6,7 +6,7 @@
 
 @if(@Model.Count == 0)
 {
-  <h3>No Martial Arts have been added yet.</h3>
+  <h4>No Martial Arts have been added yet.</h4>
 }
 
 <ul>
@@ -15,5 +15,7 @@
     <li>@Html.ActionLink($"{art.Type}", "Details", new { id = art.MartialArtId})</li>
   }
 </ul>
+
+<hr>
 
 @Html.ActionLink("Add Martial Art", "Create", "MartialArt", null, new { @class="htmlButton"})

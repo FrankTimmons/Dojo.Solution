@@ -8,10 +8,17 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h1>@ViewBag.Header</h1>
+      <p class="centerBtn"> @Html.ActionLink("See Martial Arts", "Index", "MartialArt", null, new { @class="htmlButton"}) | @Html.ActionLink("See All Senseis", "Index", "Sensei", null, new { @class="htmlButton"}) | @Html.ActionLink("See All Disciples", "Index", "Disciple", null, new { @class="htmlButton"}) </p>
+      <h1 id="header"><img id="logo" src="~/img/DojoLogo.png"/>@Html.ActionLink("  Epicodojo", "Index", "Home")</h1>
     </div>
+    <img class="bamboo" src="~/img/bamboo.png">
+    <img class="bamboo2" src="~/img/bamboo.png">
     <div class="container">
+      <hr/>
+      <h3>@ViewBag.Header</h3>
+      <hr/>
       @RenderBody()
     </div>
+    <img class="karateGuy" src="~/img/karateguy.gif">
   </body>
 </html>

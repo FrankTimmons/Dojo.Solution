@@ -17,3 +17,5 @@ else
     @Html.ActionLink($"{sensei.Name}", "Details", "Sensei", new { id = sensei.SenseiId })
   }
 }
+
+@Html.ActionLink("Delete " + $"{Model.Type}", "Delete", "MartialArt", new { id = Model.MartialArtId }, new { @class="htmlButton"})
