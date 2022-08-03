@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Dojo.Models;
+@model Dojo.Models.MartialArt;
+
+@if (Model.Senseis.Count == 0)
+{
+  <h4>There are no Senseis instructing @Model.Type</h4>
+  @Html.ActionLink("Add Sensei", "Create", "Sensei", new { id = Model.MartialArtId}, new { @class="htmlButton"})
+}
+else
+{
+  foreach (Sensei sensei in Model.Senseis)
+  {
+    @Html.ActionLink($"{sensei.Name}", "Details", "Sensei", new { id = sensei.SenseiId })
+  }
+}

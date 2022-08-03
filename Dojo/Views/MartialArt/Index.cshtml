@@ -12,7 +12,7 @@
 <ul>
   @foreach (MartialArt art in Model)
   {
-    <li>@art.Type</li>
+    <li>@Html.ActionLink($"{art.Type}", "Details", new { id = art.MartialArtId})</li>
   }
 </ul>
 

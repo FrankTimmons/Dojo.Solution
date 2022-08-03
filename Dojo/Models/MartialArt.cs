@@ -7,9 +7,10 @@ namespace Dojo.Models
   {
     public MartialArt()
     {
-
+      this.Senseis = new HashSet<Sensei>();
     }
     public int MartialArtId { get; set; }
     public string Type { get; set; }
+    public virtual ICollection<Sensei> Senseis { get; set; }
   }
 }
