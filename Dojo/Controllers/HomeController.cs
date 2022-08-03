@@ -7,7 +7,8 @@ namespace DoctorsOffice.Controllers
     [HttpGet("/")]
     public ActionResult Index()
     {
-      ViewBag.PageTitle = ("Dojo Home");
+      ViewBag.PageTitle = ("Epicodojo");
+			ViewBag.Header = ("EPICODOJO");
       return View();
     }
   }
