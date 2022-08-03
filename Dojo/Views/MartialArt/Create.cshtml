@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Dojo.Models.MartialArt
+
+@using (Html.BeginForm())
+{
+  @Html.Label("Martial Art Type: ")
+  @Html.TextBoxFor(model => model.Type)
+  <input type="submit" value="Add new Martial Art" class="htmlButton"/>
+}
+<br>
+<br>
+
+@Html.ActionLink("Show all Martial Arts", "Index", "MartialArt", null, new { @class="htmlButton"})

@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Dojo.Models;
+
+@if(@Model.Count == 0)
+{
+  <h3>No Martial Arts have been added yet.</h3>
+}
+
+<ul>
+  @foreach (MartialArt art in Model)
+  {
+    <li>@art.Type</li>
+  }
+</ul>
+
+@Html.ActionLink("Add Martial Art", "Create", "MartialArt", null, new { @class="htmlButton"})
