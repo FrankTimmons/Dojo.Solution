@@ -8,7 +8,6 @@ namespace DoctorsOffice.Controllers
     public ActionResult Index()
     {
       ViewBag.PageTitle = ("Epicodojo");
-			ViewBag.Header = ("EPICODOJO");
       return View();
     }
   }

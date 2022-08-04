@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>@ViewBag.PageTitle</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
@@ -12,16 +13,27 @@
     </div>
     <img class="bamboo" src="~/img/bamboo.png">
     <img class="bamboo2" src="~/img/bamboo.png">
-    <div class="container">
-      <a href="@Url.Action("Index", "MartialArt")" title="See Martial Arts" class="karateDog">
-        <img alt="See Martial Arts" src="@Url.Content("~/img/karatedog1.gif")">
-      </a>
-      <a href="@Url.Action("Index", "Sensei")" title="See All Senseis" class="karateDog">
-        <img alt="See All Senseis" src="@Url.Content("~/img/karatedog3.gif")">
-      </a>
-      <a href="@Url.Action("Index", "Disciples")" title="See All Disciples" class="karateDog">
-        <img alt="See All Disciples" src="@Url.Content("~/img/karatedog2.gif")">
-      </a>
+    <div class="container karateDogRow">
+      <div class="row">
+        <div class="col-4 karateDog" style="text-align: center;">
+          <h3>Martial Arts</h3>
+          <a href="@Url.Action("Index", "MartialArt")" title="See Martial Arts">
+            <img alt="See Martial Arts" src="@Url.Content("~/img/karatedog1.gif")">
+          </a>
+        </div>
+        <div class="col-4 karateDog" style="text-align: center;">
+          <h3>Senseis</h3>      
+          <a href="@Url.Action("Index", "Sensei")" title="See All Senseis">
+            <img alt="See All Senseis" src="@Url.Content("~/img/karatedog3.gif")">
+          </a>
+        </div>
+        <div class="col-4 karateDog" style="text-align: center;">
+          <h3>Disciples</h3>
+          <a href="@Url.Action("Index", "Disciple")" title="See All Disciples">
+            <img alt="See All Disciples" src="@Url.Content("~/img/karatedog2.gif")">
+          </a>
+        </div>
+      </div>
     </div>
     <img class="karateGuy" src="~/img/karateguy.gif">
   </body>

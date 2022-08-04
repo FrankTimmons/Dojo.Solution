@@ -22,6 +22,7 @@ input {
   color: #000000;
   text-shadow: 2px 2px #FBA8AC;
   font-weight: 500;
+  animation: text-shadow .75s linear infinite;
 }
 
 .jumbotron a {
@@ -66,10 +67,58 @@ li a:hover {
 .container {
   height: fit-content;
   width: fit-content;
+  min-width: 500px;
   padding: 40px;
   background-color: #FEF5F6;
   border-radius: 10px;
-  box-shadow: 6px 10px #FBA8AC, 2px 10px #fd868e;
+  animation: box-shadow 0.75s linear infinite;
+}
+
+@keyframes text-shadow {
+  from, 24.9% {
+    text-shadow:1px 2px #ffbbbf, 3px 5px #FBA8AC, 5px 8px #fd868e,  7px 11px #f16f78;
+  }
+  25%, 49.9%
+  {
+    text-shadow:1px 2px #f16f78, 3px 5px #ffbbbf, 5px 8px #FBA8AC,  7px 11px #fd868e;
+  }
+  50%, 74.9% {
+    text-shadow:1px 2px #fd868e, 3px 5px #f16f78, 5px 8px #ffbbbf,  7px 11px #FBA8AC;
+  }
+  75%, to {
+    text-shadow:1px 2px #FBA8AC, 3px 5px #fd868e, 5px 8px #f16f78,  7px 11px #ffbbbf;
+  }
+}
+
+@keyframes box-shadow {
+  from, 24.9% {
+    box-shadow:2px 4px #ffbbbf, 6px 10px #FBA8AC, 10px 16px #fd868e,  14px 22px #f16f78;
+  }
+  25%, 49.9%
+  {
+    box-shadow:2px 4px #f16f78, 6px 10px #ffbbbf, 10px 16px #FBA8AC,  14px 22px #fd868e;
+  }
+  50%, 74.9% {
+    box-shadow:2px 4px #fd868e, 6px 10px #f16f78, 10px 16px #ffbbbf,  14px 22px #FBA8AC;
+  }
+  75%, to {
+    box-shadow:2px 4px #FBA8AC, 6px 10px #fd868e, 10px 16px #f16f78,  14px 22px #ffbbbf;
+  }
+}
+
+@keyframes filter-shadow {
+  from, 24.9% {
+    filter: drop-shadow(-2px -4px 4px #ffbbbf) drop-shadow(-6px -10px 4px #FBA8AC) drop-shadow(-10px -16px 4px #fd868e)  drop-shadow(-14px -22px 4px #f58080);
+  }
+  25%, 49.9% {
+    filter: drop-shadow(-2px -4px 4px #f58080) drop-shadow(-6px -10px 4px #ffbbbf) drop-shadow(-10px -16px 4px #FBA8AC) drop-shadow(-14px -22px 4px #fd868e);
+  }
+  50%, 74.9% {
+    filter: drop-shadow(-2px -4px 4px #fd868e) drop-shadow(-6px -10px 4px #f58080) drop-shadow(-10px -16px 4px #ffbbbf) drop-shadow(-14px -22px 4px #FBA8AC);
+  }
+  75%, to {
+    filter: drop-shadow(-2px -4px 4px #FBA8AC) drop-shadow(-6px -10px 4px #fd868e) drop-shadow(-10px -16px 4px #f58080)  drop-shadow(-14px -22px 4px #ffbbbf);
+  }
 }
 
 .container h3 {
@@ -112,7 +161,7 @@ li a:hover {
   width: 100px;
   height: auto;
   margin-bottom: 10px;
-  filter: drop-shadow(2px 2px #FBA8AC);
+  animation: filter-shadow .75s linear infinite;
 }
 
 label {
@@ -145,16 +194,23 @@ label {
 }
 
 .karateGuy {
-  margin-top: 100px;
-  margin: 0px auto;
+  z-index: -1;
+  position: fixed;
+  bottom: -25px;
+  left: 25%;
   display: block;
   text-align: center;
   width: 50%;
-  height: 450px;
+  height: 250px;
+  animation: filter-shadow .5s linear infinite;
 }
 
 .karateDog img{
-  width: 33%;
+  width: 50%;
   text-align: center;
   margin: auto;
+}
+
+.karateDogRow {
+  width: 70%;
 }

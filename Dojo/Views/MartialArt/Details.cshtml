@@ -8,14 +8,19 @@
 @if (Model.Senseis.Count == 0)
 {
   <h4>There are no Senseis instructing @Model.Type</h4>
-  @Html.ActionLink("Add Sensei", "Create", "Sensei", new { id = Model.MartialArtId}, new { @class="htmlButton"})
+  @Html.ActionLink("Add Sensei", "Create", "Sensei", null, new { @class="htmlButton"})
 }
 else
-{
-  foreach (Sensei sensei in Model.Senseis)
+{ 
+  <h4>Senseis: </h4>
+  <ul>
+  @foreach (Sensei sensei in Model.Senseis)
   {
-    @Html.ActionLink($"{sensei.Name}", "Details", "Sensei", new { id = sensei.SenseiId })
+    <li>@Html.ActionLink($"{sensei.Name}", "Details", "Sensei", new { id = sensei.SenseiId })</li>
   }
+  </ul>
+  @Html.ActionLink("Add Sensei", "Create", "Sensei", null, new { @class="htmlButton"}) 
 }
+
 
 @Html.ActionLink("Delete " + $"{Model.Type}", "Delete", "MartialArt", new { id = Model.MartialArtId }, new { @class="htmlButton"})

@@ -12,6 +12,7 @@ namespace Dojo.Models
     public int SenseiId { get; set; }
     public string Name { get; set; }
     public int MartialArtId { get; set; }
+    public virtual MartialArt MartialArt { get; set; }
     public virtual ICollection<DiscipleSensei> JoinEntities { get; set; }
   }
 }

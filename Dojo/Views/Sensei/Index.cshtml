@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Dojo.Models;
+
+@if(@Model.Count == 0)
+{
+  <h4>No Senseis have been added yet.</h4>
+}
+
+<ul>
+  @foreach (Sensei sensei in Model)
+  {
+    <li>@Html.ActionLink($"{sensei.Name}", "Details", new { id = sensei.SenseiId })</li>
+  }
+</ul>
+
+<hr>
+
+@Html.ActionLink("Add Sensei", "Create", "Sensei", null, new { @class="htmlButton"})

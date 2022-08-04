@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Dojo.Models
+@model Dojo.Models.Sensei;
+
+@if(ViewBag.Count.Count == 0)
+{
+  <p>You can not add Senseis until you have a Martial Art.</p>
+  @Html.ActionLink("Add Martial Art", "Create", "MartialArt", null, new { @class="htmlButton"})
+
+}
+else
+{
+  @using (Html.BeginForm())
+  {
+    @Html.Label("Sensei Name")<span>  :  </span>
+    @Html.TextBoxFor(model => model.Name, new {required = "required", @class="textBox" })
+    @Html.Label("Martial Art")<span>  :  </span>
+    @Html.DropDownList("MartialArtId")
+    <input type="submit" value="Add new Sensei" class="htmlButton"/>
+  }
+}
+
+<hr/>
+
+@Html.ActionLink("Show all Senseis", "Index", "Sensei", null, new { @class="htmlButton"})
