@@ -8,19 +8,22 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-    <div class="jumbotron">
-      <h1 id="header"><img id="logo" src="~/img/DojoLogo.png"/>@Html.ActionLink("  Epicodojo", "Index", "Home")</h1>
+    <div id="cherryBlossoms">
+      <div class="jumbotron">
+        <h1 id="header"><img id="logo" src="~/img/DojoLogo.png"/>@Html.ActionLink("  Epicodojo", "Index", "Home")</h1>
+      </div>
+      <p class="centerBtn" id="indexBtn"> @Html.ActionLink("Martial Arts", "Index", "MartialArt", null, new { @class="htmlButton"}) | @Html.ActionLink("Senseis", "Index", "Sensei", null, new { @class="htmlButton"}) | @Html.ActionLink("Disciples", "Index", "Disciple", null, new { @class="htmlButton"}) </p>
+      <img class="bamboo" src="~/img/bamboo.png">
+      <img class="bamboo2" src="~/img/bamboo.png">
+      <img class="karateGuy1" src="~/img/karateguy2.gif">
+      <img class="karateGuy2" src="~/img/karateguy3.gif">
+      <div class="container">
+        <hr/>
+        <h3>@ViewBag.Header</h3>
+        <hr/>
+        @RenderBody()
+      </div>
     </div>
-    <img class="bamboo" src="~/img/bamboo.png">
-    <img class="bamboo2" src="~/img/bamboo.png">
-    <img class="karateGuy" src="~/img/karateguy.gif">
-    <p class="centerBtn"> @Html.ActionLink("Martial Arts", "Index", "MartialArt", null, new { @class="htmlButton"}) | @Html.ActionLink("Senseis", "Index", "Sensei", null, new { @class="htmlButton"}) | @Html.ActionLink("Disciples", "Index", "Disciple", null, new { @class="htmlButton"}) </p>
-    <div class="container">
-      <hr/>
-      <h3>@ViewBag.Header</h3>
-      <hr/>
-      @RenderBody()
-    </div>
-    
+    <img class="grass" src="~/img/grass.png">
   </body>
 </html>

@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Dojo.Models;
+@model Dojo.Models.Sensei;
+
+<h6>Currently Teaching @Html.ActionLink($"{ViewBag.currentMartialArt.Type}", "Details", "MartialArt", new { id = ViewBag.currentMartialArt.MartialArtId })</h6>
+<p>Number of Disciples Attending: </p>
+<br>
+<br>
+<p>Contact Information: </p>
+
+<br>
+
+@Html.ActionLink("Add Sensei", "Create", "Sensei", null, new { @class="htmlButton"}) 
+@Html.ActionLink("Delete " + $"{Model.Name}", "Delete", "Sensei", new { id = Model.SenseiId }, new { @class="htmlButton"})

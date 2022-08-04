@@ -36,7 +36,7 @@ hr {
 }
 
 .bamboo {
-  z-index: -1;
+  z-index: -6;
   position: fixed;
   left: -75px;
   bottom: -50px;
@@ -46,7 +46,7 @@ hr {
 }
 
 .bamboo2 {
-  z-index: -1;
+  z-index: -6;
   position: fixed;
   right: -75px;
   bottom: -50px;
@@ -71,7 +71,15 @@ li a:hover {
   padding: 40px;
   background-color: #FEF5F6;
   border-radius: 10px;
+  transform: translateY(-25px);
   animation: box-shadow 0.75s linear infinite;
+}
+
+.container h3 {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: 2px 2px #FBA8AC;
 }
 
 @keyframes text-shadow {
@@ -106,26 +114,49 @@ li a:hover {
   }
 }
 
-@keyframes filter-shadow {
+@keyframes filter-shadow-left {
   from, 24.9% {
-    filter: drop-shadow(-2px -4px 4px #ffbbbf) drop-shadow(-6px -10px 4px #FBA8AC) drop-shadow(-10px -16px 4px #fd868e)  drop-shadow(-14px -22px 4px #f58080);
+    filter: drop-shadow(-4px -4px 4px #BEE7E7) drop-shadow(-8px -10px 4px #abe2e2) drop-shadow(-12px -16px 4px #87D4D4)  drop-shadow(-16px -22px 4px #5ECBCB);
   }
   25%, 49.9% {
-    filter: drop-shadow(-2px -4px 4px #f58080) drop-shadow(-6px -10px 4px #ffbbbf) drop-shadow(-10px -16px 4px #FBA8AC) drop-shadow(-14px -22px 4px #fd868e);
+    filter: drop-shadow(-4px -4px 4px #5ECBCB) drop-shadow(-8px -10px 4px #BEE7E7) drop-shadow(-12px -16px 4px #abe2e2) drop-shadow(-16px -22px 4px #87D4D4);
   }
   50%, 74.9% {
-    filter: drop-shadow(-2px -4px 4px #fd868e) drop-shadow(-6px -10px 4px #f58080) drop-shadow(-10px -16px 4px #ffbbbf) drop-shadow(-14px -22px 4px #FBA8AC);
+    filter: drop-shadow(-4px -4px 4px #87D4D4) drop-shadow(-8px -10px 4px #5ECBCB) drop-shadow(-12px -16px 4px #BEE7E7) drop-shadow(-16px -22px 4px #abe2e2);
   }
   75%, to {
-    filter: drop-shadow(-2px -4px 4px #FBA8AC) drop-shadow(-6px -10px 4px #fd868e) drop-shadow(-10px -16px 4px #f58080)  drop-shadow(-14px -22px 4px #ffbbbf);
+    filter: drop-shadow(-4px -4px 4px #abe2e2) drop-shadow(-8px -10px 4px #87D4D4) drop-shadow(-12px -16px 4px #5ECBCB)  drop-shadow(-16px -22px 4px #BEE7E7);
   }
 }
 
-.container h3 {
-  font-family: 'Fredoka One', cursive;
-  text-transform: uppercase;
-  color: #000000;
-  text-shadow: 2px 2px #FBA8AC;
+@keyframes filter-shadow-right {
+  from, 24.9% {
+    filter: drop-shadow(4px -4px 4px #f8676e) drop-shadow(8px -10px 4px #f7565e) drop-shadow(12px -16px 4px #f84c55)  drop-shadow(16px -22px 4px #f63b2e);
+  }
+  25%, 49.9% {
+    filter: drop-shadow(4px -4px 4px #f63b2e) drop-shadow(8px -10px 4px #f8676e) drop-shadow(12px -16px 4px #f7565e) drop-shadow(16px -22px 4px #f84c55);
+  }
+  50%, 74.9% {
+    filter: drop-shadow(4px -4px 4px #f84c55) drop-shadow(8px -10px 4px #f63b2e) drop-shadow(12px -16px 4px #f8676e) drop-shadow(16px -22px 4px #f7565e);
+  }
+  75%, to {
+    filter: drop-shadow(4px -4px 4px #f7565e) drop-shadow(8px -10px 4px #f84c55) drop-shadow(12px -16px 4px #f63b2e)  drop-shadow(16px -22px 4px #f8676e);
+  }
+}
+
+@keyframes filter-shadow-dog {
+  from, 24.9% {
+    filter: drop-shadow(0px 0px 4px #f8676e) drop-shadow(0px 0px 8px #f7565e);
+  }
+  25%, 49.9% {
+    filter: drop-shadow(0px 0px 4px #f63b2e) drop-shadow(0px 0px 8px #f8676e);
+  }
+  50%, 74.9% {
+    filter: drop-shadow(0px 0px 4px #f84c55) drop-shadow(0px 0px 8px #f63b2e);
+  }
+  75%, to {
+    filter: drop-shadow(0px 0px 4px #f7565e) drop-shadow(0px 0px 8px #f84c55);
+  }
 }
 
 .centerBtn {
@@ -161,7 +192,6 @@ li a:hover {
   width: 100px;
   height: auto;
   margin-bottom: 10px;
-  animation: filter-shadow .75s linear infinite;
 }
 
 label {
@@ -193,16 +223,28 @@ label {
     color: inherit;
 }
 
-.karateGuy {
-  z-index: -1;
+.karateGuy1 {
+  z-index: -7;
   position: fixed;
-  bottom: -25px;
-  left: 25%;
+  bottom: -20px;
+  left: 10%;
   display: block;
   text-align: center;
   width: 50%;
-  height: 250px;
-  animation: filter-shadow .5s linear infinite;
+  height: 325px;
+  animation: filter-shadow-left .5s linear infinite;
+}
+
+.karateGuy2 {
+  z-index: -8;
+  position: fixed;
+  bottom: -20px;
+  right: 10%;
+  display: block;
+  text-align: center;
+  width: 50%;
+  height: 325px;
+  animation: filter-shadow-right .5s linear infinite;
 }
 
 .karateDog img{
@@ -211,6 +253,76 @@ label {
   margin: auto;
 }
 
+.karateDog a:hover{
+  animation: filter-shadow-dog .5s linear infinite;
+}
+
 .karateDogRow {
   width: 70%;
+}
+
+.karateDogRow:after {
+  filter: hue-rotate(15deg) saturate(70%) brightness(120%);
+  
+  pointer-events: none !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(https://i.imgur.com/w6otSXf.png),
+  url(https://i.imgur.com/Uz2WWFg.png);
+  animation: SAKURA 10s linear infinite;
+  z-index: -5;
+}
+
+#indexBtn {
+  transform: translateY(-40px);
+}
+
+h6 {
+  font-family: 'Fredoka One', cursive;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+h6 a {
+  color: #1CB5B5;  
+  font-weight: 400;
+  text-shadow: none;
+}
+
+h6 a:hover {
+  color: #FDD8DA;
+  text-shadow: 1px 1px #1CB5B5, -1px -1px #1CB5B5, 0px 1px #1CB5B5, 1px 0px #1CB5B5, 0px -1px #1CB5B5, -1px 0px #1CB5B5, 1px -1px #1CB5B5,  -1px 1px #1CB5B5;
+}
+
+.grass {
+  z-index: 1;
+  height: 120px;
+  width: 100vw;
+  position: fixed;
+  bottom: -30px;
+}
+
+#cherryBlossoms:after {
+  filter: hue-rotate(15deg) saturate(70%) brightness(120%);
+  
+  pointer-events: none !important;
+  position: fixed;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-image: url(https://i.imgur.com/w6otSXf.png),
+  url(https://i.imgur.com/Uz2WWFg.png);
+  animation: SAKURA 10s linear infinite;
+  z-index: -5;
+}
+
+@keyframes SAKURA {
+  0% { background-position: 0 0, 0 0, 0 0; }
+  100% { background-position: 500px 1000px, 400px 400px, 300px 300px; }
 }
