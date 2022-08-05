@@ -44,7 +44,7 @@ namespace Dojo.Controllers
     public ActionResult Details(int id)
     {
       Sensei thisSensei = _db.Senseis.FirstOrDefault(sensei => sensei.SenseiId == id);
-      ViewBag.PageTitle = ("Sensei Details");
+      ViewBag.PageTitle = (thisSensei.Name + " Details");
       ViewBag.Header = ("Sensei " + thisSensei.Name + " Details");
       ViewBag.currentMartialArt = _db.MartialArts.FirstOrDefault(martialArt => martialArt.MartialArtId == thisSensei.MartialArtId);
       return View(thisSensei);

@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Dojo.Models.Disciple
+
+<h6>Enroll Disciple @Model.Name into a new class</h6>
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.DiscipleId)
+
+  @Html.Label("Select Sensei")<span>  :  </span>
+  @Html.DropDownList("SenseiId")
+
+  <input type="submit" value="Save" />
+}

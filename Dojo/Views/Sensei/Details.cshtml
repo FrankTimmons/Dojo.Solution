@@ -5,8 +5,20 @@
 @using Dojo.Models;
 @model Dojo.Models.Sensei;
 
-<h6>Currently Teaching @Html.ActionLink($"{ViewBag.currentMartialArt.Type}", "Details", "MartialArt", new { id = ViewBag.currentMartialArt.MartialArtId })</h6>
-<p>Number of Disciples Attending: </p>
+<h6>Currently Teaching @Html.ActionLink($"{ViewBag.currentMartialArt.Type}", "Details", "MartialArt", new { id = ViewBag.currentMartialArt.MartialArtId }) to @Model.JoinEntities.Count Disciples</h6>
+@if(Model.JoinEntities.Count == 0)
+{
+  <h6>Model.Name is not teaching any Disciples</h6> 
+}
+else
+{
+  <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@Html.ActionLink($"{join.Disciple.Name}", "Details", "Disciple", new { id = join.Disciple.DiscipleId})</li>
+    }
+  </ul>
+}
 <br>
 <br>
 <p>Contact Information: </p>
