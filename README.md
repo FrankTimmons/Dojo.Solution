@@ -1,4 +1,4 @@
-# Eau Claire's Salon
+# Epicodojo
 
 #### By _**Alex Shevlin and Frank Timmons**_ 
 
